@@ -1,2 +1,2 @@
 # Todo-app
-![Screenshot](screen.png)
+![Screenshot](screenshot.png)
