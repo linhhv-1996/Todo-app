@@ -18,7 +18,6 @@ public class TaskViewModel extends AndroidViewModel {
         super(application);
         repository = new DoisterRepository(application);
         allTasks = repository.getAllTasks();
-
     }
 
     public LiveData<List<Task>> getAllTasks() { return allTasks; }

@@ -26,8 +26,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.taskList = taskList;
         this.todoClickListener = onTodoClickListener;
     }
-
-
+    
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -49,7 +48,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                         Color.LTGRAY, //disabled
                         Utils.priorityColor(task)
                 });
-
         holder.task.setText(task.getTask());
         holder.todayChip.setText(formatted);
         holder.todayChip.setTextColor(Utils.priorityColor(task));
@@ -76,26 +74,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             task = itemView.findViewById(R.id.todo_row_todo);
             todayChip = itemView.findViewById(R.id.todo_row_chip);
             this.onTodoClickListener = todoClickListener;
-
             itemView.setOnClickListener(this);
             radioButton.setOnClickListener(this);
-
-
-
         }
 
         @Override
         public void onClick(View view) {
             Task currTask = taskList.get(getAdapterPosition());
-
             int id = view.getId();
             if (id == R.id.todo_row_layout) {
                 onTodoClickListener.onTodoClick(currTask);
             }else if (id == R.id.todo_radio_button) {
                 onTodoClickListener.onTodoRadioButtonClick(currTask);
-
             }
-
         }
     }
 }

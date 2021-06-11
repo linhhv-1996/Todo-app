@@ -149,40 +149,29 @@ public class BottomSheetFragment extends BottomSheetDialogFragment implements Vi
                 if (this.isVisible()) {
                     this.dismiss();
                 }
-
             }else {
                 Snackbar.make(saveButton, R.string.empty_field, Snackbar.LENGTH_LONG)
                         .show();
             }
         });
-
-
     }
 
     @Override
     public void onClick(View view) {
-
         int id = view.getId();
         if (id == R.id.today_chip) {
             //set data for today
             calendar.add(Calendar.DAY_OF_YEAR, 0);
             dueDate = calendar.getTime();
             Log.d("TIME", "onClick: " + dueDate.toString());
-
-
         } else if (id == R.id.tomorrow_chip) {
-
             calendar.add(Calendar.DAY_OF_YEAR, 1);
             dueDate = calendar.getTime();
             Log.d("TIME", "onClick: " + dueDate.toString());
-
         } else if (id == R.id.next_week_chip) {
-
             calendar.add(Calendar.DAY_OF_YEAR, 7);
             dueDate = calendar.getTime();
             Log.d("TIME", "onClick: " + dueDate.toString());
-
         }
-
     }
 }
